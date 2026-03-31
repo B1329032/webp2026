@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>資工選課表</title>
 
+<style>
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th{
+    border: 1px solid #ddd;
+    padding: 6px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover{background-color: #ddd;}
+
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>資工選課表</h2>
+
+<table id="csie">
+    <tr>
+        <th>開課單位</th>
+        <th>課程名稱</th>
+        <th>授課教師</th>
+    </tr>
+
+    <tr>
+        <td>資工系</td>
+        <td onclick="openCourseWindow('https://catalog.cgu.edu.tw/coursedata?sectionid=A2337')"
+        style="color:black; cursor:pointer;">
+        物件導向軟體設計
+        </td>
+        <td id="teacher1">黃崇源</td>
+    </tr>
+
+    <tr>
+        <td>資工系</td>
+        <td onclick="openCourseWindow('https://catalog.cgu.edu.tw/coursedata?sectionid=A2341')"
+        style="color:black; cursor:pointer;">
+        平行程式設計
+        </td>
+        <td>李春良</td>
+    </tr>
+
+    <tr>
+        <td>資工系</td>
+        <td onclick="openCourseWindow('https://catalog.cgu.edu.tw/coursedata?sectionid=A2338')"
+        style="color:black; cursor:pointer;">
+        作業系統實務
+        </td>
+        <td>張哲維</td>
+    </tr>
+
+    <tr>
+        <td>資工系</td>
+        <td onclick="openCourseWindow('https://catalog.cgu.edu.tw/coursedata?sectionid=A2357')"
+        style="color:black; cursor:pointer;">
+        數位電路
+        </td>
+        <td>謝萬雲</td>
+    </tr>
+
+    <tr>
+        <td>資工系</td>
+        <td onclick="openCourseWindow('https://catalog.cgu.edu.tw/coursedata?sectionid=A2339')"
+        style="color:black; cursor:pointer;">
+        通訊系統
+        </td>
+        <td>陳仁暉</td>
+    </tr>
+
+    <tr>
+        <td>資工系</td>
+        <td onclick="openCourseWindow('https://catalog.cgu.edu.tw/coursedata?sectionid=A2340')"
+        style="color:black; cursor:pointer;">
+       軟硬體專題(2)
+        </td>
+        <td>黃崇源</td>
+    </tr>
+</table>
+
+<div id="popover" style="
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 400px;
+    height: 500px;
+    background: white;
+    border: 2px solid black;
+    z-index: 1000;
+">
+
+    <button onclick="closePopover()">關閉</button>
+    <iframe src="https://catalog.cgu.edu.tw/coursedata?sectionid=A2337"
+    width="100%"
+    height="90%">
+    </iframe>
+</div>
+
+<button onclick="changeResult()">Change</button>
+<script>
+function changeResult() {
+    document.getElementById("teacher1").innerHTML = "李春良";
+}
+</script>
+<script>
+function openCourseWindow(url) {
+    window.open(
+        url, 
+        '_blank', 
+        'width=800,height=600,top=100,left=100,scrollbars=yes,resizable=yes'
+    );
+}
+</script>
+
+</body>
+</html>

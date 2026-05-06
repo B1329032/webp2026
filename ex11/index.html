@@ -1,1 +1,56 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>CGU FIX</title>
+ 
+  <!-- React -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+ 
+  <!-- MUI -->
+  <script src="https://unpkg.com/@mui/material@5/umd/material-ui.development.js"></script>
+  <script src="https://unpkg.com/@mui/icons-material@5/umd/material-ui-icons.development.js"></script>
+</head>
+ 
+<body>
+  <div id="root"></div>
+ 
+  <script>
+    const e = React.createElement;
+ 
+    const IconButton = MaterialUI.IconButton;
+ 
+    // 🔥 重點：直接從 MaterialUIIcons 取（避免 window undefined）
+    const Icons = typeof MaterialUIIcons !== "undefined" ? MaterialUIIcons : {};
+ 
+    function App() {
+      return e(
+        "div",
+        { style: { padding: "20px" } },
+ 
+        e("h2", { style: { color: "red" } }, "hello CGU!!"),
+ 
+        e(
+          "div",
+          { style: { display: "flex", gap: "10px", marginTop: "20px" } },
+ 
+          Icons.AddShoppingCart
+            ? e(IconButton, { color: "primary" }, e(Icons.AddShoppingCart))
+            : e("button", null, "cart"),
+ 
+          Icons.Delete
+            ? e(IconButton, { color: "primary" }, e(Icons.Delete))
+            : e("button", null, "delete"),
+ 
+          Icons.Alarm
+            ? e(IconButton, { color: "primary" }, e(Icons.Alarm))
+            : e("button", null, "alarm")
+        )
+      );
+    }
+ 
+    ReactDOM.render(e(App), document.getElementById("root"));
+  </script>
+</body>
+</html>

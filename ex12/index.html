@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
 
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div id="root"></div>
+
+<!-- React -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<!-- MUI -->
+<script src="https://unpkg.com/@mui/material@5/umd/material-ui.development.js"></script>
+<script src="https://unpkg.com/@mui/icons-material@5/umd/material-ui-icons.development.js"></script>
+
+<!-- Babel (讓 JSX 可以用) -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- React Code -->
+<script type="text/babel">
+function App() {
+  const handleLogin = () => {
+    alert("Login clicked!");
+  };
+
+  return (
+    <div className="container">
+      {/* 左邊圖片 */}
+      <div className="left">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" />
+      </div>
+
+      {/* 右邊登入 */}
+      <div className="right">
+        <h2>Sign in CSIE@CGU</h2>
+        <p className="subtitle">Welcome back 👋</p>
+
+        <input type="text" placeholder="Email Address" />
+        <input type="password" placeholder="Password" />
+
+        <div className="remember">
+          <input type="checkbox" />
+          <span>Remember me</span>
+        </div>
+
+        <button onClick={handleLogin}>SIGN IN</button>
+
+        <p className="link">Forgot password?</p>
+        <p className="link">Don't have an account? Sign Up</p>
+      </div>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/19.1.1/cjs/react.production.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/19.1.1/cjs/react-dom.production.min.js'></script>
+  </body>
+  
+</html>

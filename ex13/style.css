@@ -1,0 +1,55 @@
+body {
+
+  font-family: Arial;
+
+  text-align: center;
+
+}
+
+ 
+
+.board-row {
+
+  display: flex;
+
+  justify-content: center;
+
+}
+
+ 
+
+.square {
+
+  width: 60px;
+
+  height: 60px;
+
+  margin: 3px;
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+}
+
+ 
+
+.game {
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 20px;
+
+}
+
+ 
+
+.game-info {
+
+  margin-left: 20px;
+
+}
